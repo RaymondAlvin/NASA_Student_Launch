@@ -37,13 +37,13 @@ seq = [ [True,False,False,False],
 	[False,True,False,False],
 	[False,False,True,False],
 	[False,False,True,False] ]
-while True:
-	for i in range(512):
-		for halfstep in range(8):
-			for pin in range(4):
-				ControlPin[pin].value = seq[halfstep][pin]
-				#GPIO.output(ControlPin[pin], seq[halfstep][pin])
-			time.sleep(0.001)
+
+for i in range(512):
+	for halfstep in range(8):
+		for pin in range(4):
+			ControlPin[pin].value = seq[halfstep][pin]
+			#GPIO.output(ControlPin[pin], seq[halfstep][pin])
+		time.sleep(0.001)
 
 
 GPIO.cleanup()
