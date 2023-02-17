@@ -1,0 +1,2 @@
+chan,utime,isotime,source,heard,level,error,dti,name,symbol,latitude,longitude,speed,course,altitude,frequency,offset,tone,system,status,telemetry,comment
+0,1676138664,2023-02-11T18:04:24Z,KN6GBO,KN6GBO,50(18/16),0,>,KN6GBO,/ ,,,,,,,,,,,,KN6GBO C3 A1 D4 C3 F6 C3 F6 B2 B2 C3
