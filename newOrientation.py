@@ -8,6 +8,7 @@ import sys
 from Adafruit_BNO055 import BNO055
 from adafruit_motor import stepper
 
+
 #motor configuration
 #200 steps per revolution
 DELAY = 0.01
@@ -42,7 +43,6 @@ bno = BNO055.BNO055(serial_port='/dev/serial0', rst=18)
 # and RST connected to pin P9_12:
 #bno = BNO055.BNO055(rst='P9_12')
 
-
 # Enable verbose debug logging if -v is passed as a parameter.
 if len(sys.argv) == 2 and sys.argv[1].lower() == '-v':
     logging.basicConfig(level=logging.DEBUG)
@@ -59,7 +59,6 @@ print('Self test result (0x0F is normal): 0x{0:02X}'.format(self_test))
 if status == 0x01:
     print('System error: {0}'.format(error))
     print('See datasheet section 4.3.59 for the meaning.')
-
     
 # Print BNO055 software revision and other diagnostic data.
 sw, bl, accel, mag, gyro = bno.get_revision()
@@ -74,22 +73,7 @@ print()
 
 
 
-
-
-
-
-
-
-
-
-#    print("Temperature: {} degrees C".format(sensor.temperature))
-#    print("Accelerometer (m/s^2): {}".format(sensor.acceleration))
-#    print("Magnetometer (microteslas): {}".format(sensor.magnetic))
-#    print("Gyroscope (rad/sec): {}".format(sensor.gyro))
-#    print("Euler angle: {}".format(sensor.euler))
-#    print("Quaternion: {}".format(sensor.quaternion))
-#    print("Linear acceleration (m/s^2): {}".format(sensor.linear_acceleration))
-
+#Start stepper motor and check orientation
 while True:
 	
 	try:
