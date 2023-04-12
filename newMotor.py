@@ -11,7 +11,7 @@ from adafruit_motor import stepper
 
 #200 steps per revolution
 DELAY = 0.01
-STEPS = 40
+STEPS = 20
 
 # You can use any available GPIO pin on both a microcontroller and a Raspberry Pi.
 # The following pins are simply a suggestion. If you use different pins, update
@@ -31,19 +31,22 @@ motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=
 
 while True:
     for step in range(STEPS):
-    motor.onestep()
-    time.sleep(DELAY)
+        motor.onestep()
+        time.sleep(DELAY) 
+        
+    # if statement to check orientation
 
 
-
+        
+# for step in range(STEPS):
+#         motor.onestep(style=stepper.DOUBLE)
+#         time.sleep(DELAY)
 
 # for step in range(STEPS):
 #     motor.onestep(direction=stepper.BACKWARD)
 #     time.sleep(DELAY)
 
-# for step in range(STEPS):
-#     motor.onestep(style=stepper.DOUBLE)
-#     time.sleep(DELAY)
+
 
 # for step in range(STEPS):
 #     motor.onestep(direction=stepper.BACKWARD, style=stepper.DOUBLE)
