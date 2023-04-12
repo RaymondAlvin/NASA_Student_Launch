@@ -91,28 +91,26 @@ print()
 #    print("Linear acceleration (m/s^2): {}".format(sensor.linear_acceleration))
 
 while True:
-  
-  try:
+	
+	try:
 		
-
 		while True:
-
-
-
-
+			
 			time.sleep(3)
-      for step in range(STEPS):
-        motor.onestep()
-        time.sleep(DELAY)
-        
-        x,y,orientation = bno.read_gravity()
-        if orientation > 9.6 and orientation < 10:
-
-								print(orientation)
-								print("The camera is upright")
-								print()
-								print("Starting APRS")
-								return
+			
+			for step in range(STEPS):
+				motor.onestep()
+				time.sleep(DELAY)
+			
+			x,y,orientation = bno.read_gravity()
+			
+			if orientation > 9.6 and orientation < 10:
+				print(orientation)
+				print("The camera is upright")
+				print()
+				print("Starting APRS")
+				return
+																
 					
 	except TypeError:
 		print("TypeError, Checking again")
