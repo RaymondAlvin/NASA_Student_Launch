@@ -36,35 +36,35 @@ def take_pic():
 
 	#normal pic with no effects
 	if not grey and not filter and not flip:
-		subprocess.call('libcamera-still --datetime', shell=True)
+		subprocess.call('libcamera-still --datetime --rotation 180', shell=True)
 
 	#pic with image filter
 	elif not grey and filter and not flip:
-		subprocess.call('libcamera-still --datetime --brightness .5', shell=True)
+		subprocess.call('libcamera-still --datetime --brightness .5 --rotation 180', shell=True)
 
 	# pic with image greyscale
 	elif grey and not filter and not flip:
-		subprocess.call('libcamera-still --datetime --saturation 0.0', shell=True)
+		subprocess.call('libcamera-still --datetime --saturation 0.0 --rotation 180', shell=True)
 
 	#flip the pic 180 degrees
 	elif not grey and not filter and flip:
-		subprocess.call('libcamera-still --datetime --rotation 180', shell=True)
+		subprocess.call('libcamera-still --datetime', shell=True)
 
 	# pic with image greyscale and filter
 	elif grey and filter and not flip:
-		subprocess.call('libcamera-still --datetime --saturation 0.0 --brightness .5', shell=True)
+		subprocess.call('libcamera-still --datetime --saturation 0.0 --brightness .5 --rotation 180', shell=True)
 
 	#pic with image greyscale and 180 degree flip
 	elif grey and not filter and flip:
-		subprocess.call('libcamera-still --datetime --saturation 0.0 --rotation 180', shell=True)
+		subprocess.call('libcamera-still --datetime --saturation 0.0', shell=True)
 
 	#pic with filter and 180 degree flip
 	elif not grey and filter and flip:
-		subprocess.call('libcamera-still --datetime --brightness .5 --rotation 180', shell=True)
+		subprocess.call('libcamera-still --datetime --brightness .5', shell=True)
 
 	#pic with everything
 	elif grey and filter and flip:
-		subprocess.call('libcamera-still --datetime --saturation 0.0 --rotation 180 --brightness .5', shell=True)
+		subprocess.call('libcamera-still --datetime --saturation 0.0 --brightness .5', shell=True)
 
 
 
