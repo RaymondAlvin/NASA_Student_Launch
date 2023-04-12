@@ -9,8 +9,9 @@ import board
 import digitalio
 from adafruit_motor import stepper
 
+#200 steps per revolution
 DELAY = 0.01
-STEPS = 200
+STEPS = 40
 
 # You can use any available GPIO pin on both a microcontroller and a Raspberry Pi.
 # The following pins are simply a suggestion. If you use different pins, update
